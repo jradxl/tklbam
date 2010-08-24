@@ -103,9 +103,11 @@ class API:
     CREATED = 201
     DELETED = 204
 
+    CAINFO = "/etc/ssl/certs/hub-turnkeylinux-org.crt"
+
     @classmethod
     def request(cls, method, url, attrs={}, headers={}):
-        c = Curl(url, headers)
+        c = Curl(url, headers, cainfo=cls.CAINFO)
         func = getattr(c, method.lower())
         func(attrs)
 
