@@ -23,7 +23,9 @@ class CliWrapper(CliWrapper):
                             '',
                             'passphrase', 'escrow',
                             '',
-                            'backup', 'list', 'restore', 'restore-rollback']
+                            'backup', 'list', 'restore', 'restore-rollback',
+                            '',
+                            'status']
 
 if __name__ == "__main__":
     CliWrapper.main()
