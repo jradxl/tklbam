@@ -33,11 +33,11 @@ KEYS:
      There are two. The first is TurnkeyLinux's public APT key for signing their repository. This is coded within 
      "ez-apt-install-ubuntu.sh" and you can ignore it (although the script does allow for some other Key to be used).
      The second is your private API Key, which is generated within your Hub account on TurnkeyLinux's website. This provides a 
-     method for the tklbam python scripts to access your Hub account without the need of username and passwords. Therefore 
-     it needs to be kept secure.
+     method for the tklbam python scripts to access your Hub account without the need of username and password. Therefore 
+     it needs to be kept secure. I got confused at first with APT and API!
      
      You initialise tlkbam with the command, "sudo tklbam init". It will ask for your Hub API-Key.  
-     I got confused at first with APT and API!
+     
      
 MAKEFILES:
      There are two in this github repository. The first in docs/ is for building the documentation. Add rst2man with 
