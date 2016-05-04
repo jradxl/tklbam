@@ -7,13 +7,13 @@
 #  See https://github.com/jradxl/tklbam
 ##
 
-
 if [ -n "$1" ]; then
     PACKAGE="$1"
 fi
 
-set ${APT_URL:="http://archive.turnkeylinux.org/debian"}
-set ${APT_KEY:=A16EB94D}
+if [ -n "$2" ]; then
+	APT_KEY="$2"
+fi
 
 if [ -z "$PACKAGE" ]; then
     cat<<EOF
@@ -27,6 +27,16 @@ Environment variables:
 EOF
     exit 1
 fi
+
+##
+# A APT-KEY can be added on the command line.
+# Now I understand the script a bit better, it's not really necessary.
+##
+if [ -z "$APT_KEY" ]; then
+   set ${APT_KEY:=A16EB94D}
+fi
+
+set ${APT_URL:="http://archive.turnkeylinux.org/debian"}
 
 error() {
     1>&2 echo "error: $1"
@@ -85,11 +95,17 @@ if ! rgrep . /etc/apt/sources.list* | sed 's/#.*//' | grep -q $APT_URL; then
 fi
 
 ##
+# As usual, update the reposiiories
+##
+#set -x
+echo
+echo "apt-get update..."
+apt-get update
+
+##
 #I don't know what this does, so commented out!
 #You need to explicitally run the tklbam install yourself
 ##
-#set -x
-#apt-get update
 #if 0>&2 tty > /dev/null; then
 #    0>&2 apt-get install $PACKAGE
 #else
@@ -99,8 +115,12 @@ fi
 #    echo
 #fi
 
+#set +x
+
+echo 
+echo 
 echo "Warning: A Debian Jessie repository has been added."
-echo "    Read carefully the log of what apt-get will do."
+echo " ** Read carefully the log of what apt-get install will do. **"
 echo 
 echo "To finish execute this command:"
 echo 

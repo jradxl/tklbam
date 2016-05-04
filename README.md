@@ -10,9 +10,10 @@ Version for Ubuntu 16.04
    
 -- To Use:
 
-     Either this command
-      
-     sudo wget -O - -q https://raw.github.com/jradxl/tklbam/master/contrib/ez-apt-install-ubuntu.sh | PACKAGE=tklbam /bin/bash
+     Either these commands, as root
+     
+     sudo -i  
+     wget -O - -q https://raw.github.com/jradxl/tklbam/master/contrib/ez-apt-install-ubuntu.sh PACKAGE=tklbam /bin/bash
    
      OR
 
@@ -27,3 +28,26 @@ WARNING:
      You need to manually type, sudo apt-get install tklbam after the install script finishes.
      You are advised to read the log of what apt-get will do before continuing the install.
     
+
+KEYS:
+     There are two. The first is TurnkeyLinux's public APT key for signing their repository. This is coded within 
+     "ez-apt-install-ubuntu.sh" and you can ignore it (although the script does allow for some other Key to be used).
+     The second is your private API Key, which is generated within your Hub account on TurnkeyLinux's website. This provides a 
+     method for the tklbam python scripts to access your Hub account without the need of username and passwords. Therefore 
+     it needs to be kept secure.
+     
+     You initialise tlkbam with the command, "sudo tklbam init". It will ask for your Hub API-Key.  
+     I got confused at first with APT and API!
+     
+MAKEFILES:
+     There are two in this github repository. The first in docs/ is for building the documentation. Add rst2man with 
+     "sudo apt-get install python-docutils". You can ignore this makefile, but to aid understanding Tklbam, I have 
+     added a PDF of all the Man pages in this directtory, tklbam-all-docs.pdf
+     The second is in the root of this repository and is for installing the python scripts in /usr/local/. It is not necessary
+     to use this makefile unless you are developing, and if you do the installation will be in precedence to those installed 
+     by "ez-apt-install-ubuntu.sh". 
+     
+     
+     
+     
+     
