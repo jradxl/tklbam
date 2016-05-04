@@ -78,15 +78,26 @@ if ! rgrep . /etc/apt/sources.list* | sed 's/#.*//' | grep -q $APT_URL; then
     echo "Added $APT_URL package source to $apt_file"
 fi
 
-set -x
-apt-get update
+##
+#I don't know what this does, so commented out!
+#You need to explicitally run the tklbam install yourself
+##
+#set -x
+#apt-get update
+#if 0>&2 tty > /dev/null; then
+#    0>&2 apt-get install $PACKAGE
+#else
+#    echo "To finish execute this command:"
+#    echo 
+#    echo "    apt-get install $PACKAGE"
+#    echo
+#fi
 
-if 0>&2 tty > /dev/null; then
-    0>&2 apt-get install $PACKAGE
-else
-    echo "To finish execute this command:"
-    echo 
-    echo "    apt-get install $PACKAGE"
-    echo
-fi
+echo "Warning: A Debian Jessie repository has been added."
+echo "     Read carefully the log of what apt-get will do."
+echo 
+echo "To finish execute this command:"
+echo 
+echo "    sudo apt-get install $PACKAGE"
+echo
 
