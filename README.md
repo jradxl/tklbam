@@ -6,7 +6,7 @@ Version for Ubuntu 16.04
    so their command fails.
    This repository includes a modified verion of their install script renamed "ez-apt-install-ubuntu.sh", which 
    fixes this problem by hard-coding in a reference to "stretch" by subsituting "jessie". It also contains some comments as
-   I work out what this script does!
+   I work out what this script does! My version of the script starts with a delete of the repository .list file in /etc/apt/sources.d/ which allows it to be re-run with changed values.
    
 -- To Use:
 
