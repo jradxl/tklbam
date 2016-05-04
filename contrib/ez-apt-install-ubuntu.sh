@@ -1,6 +1,12 @@
 #!/bin/bash -e
 # script adds the correct apt source and installs package
 # Author: Liraz Siri <liraz@turnkeylinux.org>
+##
+# Modified: John Radley <jradxl AT gmail DOT com>
+#  For use with Ubuntu 16.04
+#  See https://github.com/jradxl/tklbam
+##
+
 
 if [ -n "$1" ]; then
     PACKAGE="$1"
@@ -94,7 +100,7 @@ fi
 #fi
 
 echo "Warning: A Debian Jessie repository has been added."
-echo "     Read carefully the log of what apt-get will do."
+echo "    Read carefully the log of what apt-get will do."
 echo 
 echo "To finish execute this command:"
 echo 
