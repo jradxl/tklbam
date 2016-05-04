@@ -22,7 +22,7 @@ Version for Ubuntu 16.04
 
 WARNING:
      This install adds a TurnkeyLinux repository based on Debian Jessie to your Ubuntu 16.04.
-     As far as can seem the install only adds Python scripts from TurnkeyLinux's repository so it 
+     As far as can see the install only adds Python scripts from TurnkeyLinux's repository so it 
      should be safe. Because of this, my "ez-apt-install-ubuntu.sh" does not install tklbam by default.
      You need to manually type, sudo apt-get install tklbam after the install script finishes.
      You are advised to read the log of what apt-get will do before continuing the install.
