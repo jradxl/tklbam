@@ -10,15 +10,15 @@ Version for Ubuntu 16.04
    
 -- To Use:
 
-     Either these commands, as root
+     Either these commands
      
      sudo -i  
-     wget -O - -q https://raw.github.com/jradxl/tklbam/master/contrib/ez-apt-install-ubuntu.sh PACKAGE=tklbam /bin/bash
+     wget -O - -q https://raw.githubusercontent.com/jradxl/tklbam/master/contrib/ez-apt-install-ubuntu.sh | PACKAGE=tklbam /bin/bash
    
      OR
 
      git clone https://github.com/jradxl/tklbam.git
-     and then run sudo ./ez-apt-install-ubuntu.sh from within the clone.
+     sudo ./ez-apt-install-ubuntu.sh from within the clone.
      
 
 
